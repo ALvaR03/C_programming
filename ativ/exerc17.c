@@ -15,12 +15,11 @@ int main(void) {
 	for (i = 0; i <= 9; i++) {
 		printf("Digite o valor numero %d: ", i+1);
 		scanf("%d", &nums[i]);
-		system("clear");
 	}
 
-	//Verificar volores maiores que 30;
+	//Verificar valores maiores que 30;
 	for (i = 0; i <= 9; i++) {
-		if (nums[i] > maiores[j]) {
+		if (nums[i] > 30) {
 			maiores[j] = nums[i];
 		printf("Os valores maiores que 30 foram: %d \n\n", maiores[j]);
 		}
