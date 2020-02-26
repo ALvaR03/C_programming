@@ -14,14 +14,14 @@ int main(){
 
 	/* Entrada de dados */
 
-	for (i = 0; i <= 4; i++) {
+	for (i = 0; i < 4; i++) {
 		printf("Escreva um nome: ");
 		scanf("%s", &nome[i]);
 	}
 		/* Ordenacao */
 
-		for (i = 0; i <= 4; i++) {
-			for (j = i + 1; j <= 4; j++) {
+		for (i = 0; i < 3; i++) {
+			for (j = i + 1; j < 4; j++) {
 
 				if (nome[i] > nome[j]) {
 					n = nome[i];
@@ -34,8 +34,8 @@ int main(){
 
 		/* Saida de dados */
 
-		for (i = 0; i <= 4; i++) 
-			printf("%s", nome[i]);
+		for (i = 0; i < 4; i++) 
+			printf("%c\n", nome[i]);
 
 	return 0;
 }
