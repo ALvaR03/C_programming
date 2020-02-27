@@ -28,15 +28,14 @@ int main(){
 					nome[i] = nome[j];
 					nome[j] = n;
 				}
-
 			}
 		}
 
 		/* Saida de dados */
 
-		for (i = 0; i < 4; i++) 
-			strcpy(nome, "%s");
-			printf("%s\n", nome[i]);
+		for (i = 0; i < 4; i++) {
+			printf("%c\n", nome[i]);
+		}
 
 	return 0;
 }
