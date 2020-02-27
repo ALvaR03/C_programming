@@ -35,7 +35,8 @@ int main(){
 		/* Saida de dados */
 
 		for (i = 0; i < 4; i++) 
-			printf("%c\n", nome[i]);
+			strcpy(nome, "%s");
+			printf("%s\n", nome[i]);
 
 	return 0;
 }
