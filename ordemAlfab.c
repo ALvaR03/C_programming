@@ -8,7 +8,7 @@
 int main(){
 	system("clear");
 
-	char nome[99];
+	char nome[5][15];
 	int i, j;
 	char n;
 
@@ -16,10 +16,11 @@ int main(){
 
 	for (i = 0; i < 4; i++) {
 		printf("Escreva um nome: ");
-		scanf("%s", &nome[i]);
+		gets(nome[i]);
 	}
 		/* Ordenacao */
 
+	/*
 		for (i = 0; i < 3; i++) {
 			for (j = i + 1; j < 4; j++) {
 
@@ -29,12 +30,12 @@ int main(){
 					nome[j] = n;
 				}
 			}
-		}
+		} */
 
 		/* Saida de dados */
 
 		for (i = 0; i < 4; i++) {
-			printf("%c\n", nome[i]);
+			printf("%s\n", nome[i]);
 		}
 
 	return 0;
