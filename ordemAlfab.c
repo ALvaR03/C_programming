@@ -6,9 +6,9 @@
 	 * na tela os nomes em ordem alfabetica */
 
 int main(){
-	system("clear");
+	system("cls");
 
-	char nome[99];
+	char nome[5][15];
 	int i, j;
 	char n;
 
@@ -20,6 +20,7 @@ int main(){
 	}
 		/* Ordenacao */
 
+/*
 		for (i = 0; i < 3; i++) {
 			for (j = i + 1; j < 4; j++) {
 
@@ -30,11 +31,12 @@ int main(){
 				}
 			}
 		}
+*/
 
 		/* Saida de dados */
 
 		for (i = 0; i < 4; i++) {
-			printf("%c\n", nome[i]);
+			printf("%s\n", nome[i]);
 		}
 
 	return 0;
