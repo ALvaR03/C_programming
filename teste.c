@@ -3,7 +3,7 @@
 
 int main()
 {
-    int a, maior=0, menor=0;
+    int a, maior = 0, menor = 0;
     float Notas[10];
     
     printf("digite 10 notas");
@@ -15,15 +15,15 @@ int main()
     }
 
         
-        for(a=0;a<10;a++){
-            if(Notas[a]>maior){
-                maior=Notas[a];
+        for(a = 0;a < 10; a++){
+            if(Notas[a] > maior){
+                maior = Notas[a];
             }
         }
      printf("o maior valor é %d", maior);
      
-         for(a=0;a<10;a++){
-                if(Notas[a]<menor){
+         for(a = 0;a < 10; a++){
+                if(Notas[a] < menor){
                 menor=Notas[a];
             }
         }
@@ -31,5 +31,5 @@ int main()
 
     
 
-return 0;
+    return 0;
 } 
