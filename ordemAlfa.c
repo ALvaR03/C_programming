@@ -5,15 +5,25 @@
 int main(void) {
     system("cls");
 
-        char nome[5][15];
+        char nome[5][5];
         int i, j;
         char n;
 
         for (i = 0; i < 4; i++) {
-            gets(nome[i]);
+            printf("Digite o nome: ");
+            scanf("%s", &nome[i]);
         }
 
-        /*Ordenacao*/
+        /*
+            i = 0
+            j = 
+            nome[i] = 
+            nome[j] = 
+            n = 
+            troca = 
+        */
+
+        /*Ordenacao
 
         for (i = 0; i < 4; i++) {
             for (j = i + 1; j < 5; j++) {
@@ -23,11 +33,13 @@ int main(void) {
                     nome[j] = n;
                 }
             }
-        }
+        }*/
 
         for (i = 0; i < 4; i++) {
-            printf("%s\n", nome[i]);
+            for (j = 0; j < 4; j++) {
+                printf("array[%d][%d]: %s\n", i, j, nome[i]);
+            }           
         }
 
-    return 0;
+    return (0);
 }
