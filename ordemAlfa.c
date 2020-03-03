@@ -3,25 +3,18 @@
 #include <string.h>
 
 int main(void) {
-    system("cls");
+    system("clear");
 
-        char nome[5][5];
+        char nome[5][10];
         int i, j;
         char n;
 
-        for (i = 0; i < 4; i++) {
+        for (i = 0; i <= 4; i++) {
             printf("Digite o nome: ");
-            scanf("%s", &nome[i]);
+		  fflush(stdin);
+            gets(nome[i]);
         }
 
-        /*
-            i = 0
-            j = 
-            nome[i] = 
-            nome[j] = 
-            n = 
-            troca = 
-        */
 
         /*Ordenacao
 
@@ -35,11 +28,9 @@ int main(void) {
             }
         }*/
 
-        for (i = 0; i < 4; i++) {
-            for (j = 0; j < 4; j++) {
-                printf("array[%d][%d]: %s\n", i, j, nome[i]);
-            }           
+        for (i = 0; i <= 4; i++) {
+                printf("array: %s\n", nome[i]);
         }
 
-    return (0);
+    return 0;
 }
