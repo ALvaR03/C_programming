@@ -1,0 +1,490 @@
+Algoritmo "Motorsport's - v5.0"
+// Disciplina   : [Linguagem e Lógica de Programação]
+// Professor   : Bruno
+// Descrição   : Sistema para aluguel de carros
+// Alunos(as)    : Álvaro Lima, Thiago Antonio, Daniel Cruz,
+//Lucas Farias, Thiago Cardoso, Vitor Larboda, Jonathan Buzzi,
+//Jordan Ryan
+// Data atual  : 15/05/2019
+
+// registros de...
+tipo
+
+   //clientes
+   cliente = registro
+      nome : caracter
+      cpf : inteiro
+      numCnh : real
+      tel : inteiro
+      endereco : caracter
+   fimregistro
+
+   // funcionarios
+   funcionario = registro
+      nome : caracter
+      cpf : inteiro
+      login : caracter
+      senha : caracter
+   fimregistro
+
+   // carros
+   carro = registro
+      marca : caracter
+      modelo : caracter
+      placa : caracter
+      ano : inteiro
+      cor : caracter
+      valordiaria : real
+   fimregistro
+
+Var
+   // Seção de Declarações das variáveis
+
+   //Vetor dos registros
+   cadastroCliente : vetor [0..2] de cliente
+   c : inteiro
+   cadastroFuncionario : vetor [0..2] de funcionario
+   f : inteiro
+   cadastroCarro : vetor [0..2] de carro
+   car : inteiro
+
+
+   //variaveis do progama
+   opsn : inteiro
+
+   menup, menuclien, menufunc : inteiro
+   login : caracter
+   senha : inteiro
+
+   diahora : caracter
+   quantdias : real
+
+
+   //variavel de pesquisa
+   placapesq : caracter
+   ppesq : caracter
+   buscaclien : inteiro
+   acesso : logico
+
+   continuar : inteiro
+
+   //variavel de carregamento
+   Pesquisando, Carregando : inteiro
+
+Inicio
+   // Seção de Comandos
+   escreval("Você irá precisar para acessar o menu do funcionário:")
+   escreval("|---------------------------------------------------|")
+   escreva("Login: ")
+   leia(login)
+   escreva("Senha: ")
+   leia(senha)
+   limpatela
+
+
+
+   repita
+
+      escreval("~Menu Principal~")
+      escreval("|==============|")
+      escreval("1- Funcionario  ")
+      escreval("2- Cliente      ")
+      escreval("0- Sair         ")
+      escreval("|==============|")
+      escreva("Opção: ")
+      leia(menup)
+
+      //escolha da opção funcionario
+      escolha (menup)
+
+         // 1ºcaso do menu principal
+      caso 1
+
+         limpatela
+         repita
+            escreva("Login: ")
+            leia(login)
+            escreva("Senha: ")
+            leia(senha)
+            limpatela
+
+            //Você pode alterar o login e senha a qualquer momento ;D
+            se (login = "admin") e (senha = 2023) entao
+               escreval("    ** Bem-Vindo **       ")
+            senao
+               escreval("Usuario não encontrado, Digite novamente!")
+               escreval("-----------------------------------------")
+            fimse
+         ate (login = "admin") e (senha = 2023)
+
+         //Aqui começa os procedimentos de cadastro.
+         enquanto (login = "admin") e (senha = 2023) faca
+
+            //Carregamento
+            Carregando <- 0
+
+            enquanto (Carregando <= 100) faca
+               limpatela
+               escreva("Carregando")
+               escreval(Carregando,"%")
+               Carregando <- Carregando + 1
+
+            fimenquanto
+            limpatela
+            //----------------------------------------------
+
+
+            escreval("|============================|")
+            escreval("     **Menu de Cadastro**     ")
+            escreval("|============================|")
+            escreval("(1)- Cadastrar Cliente        ")
+            escreval("(2)- Cadastrar Funcionarios   ")
+            escreval("(3)- Cadastrar Carro          ")
+            escreval("(4)- Exibir Relatorio         ")
+            escreval("(5)- Opção para Cliente       ")
+            escreval("|----------------------------|")
+            escreva("Opção: ")
+            leia(menufunc)
+            limpatela
+            //escolha da opçao do menu funcionario
+            escolha(menufunc)
+
+               //Cadastro de clientes
+            caso 1
+
+               limpatela
+
+               para c de 0 ate 2 faca
+
+                  escreva("Nome: ")
+                  leia(cadastroCliente[c].nome)
+                  escreva("CPF: ")
+                  leia(cadastroCliente[c].cpf)
+                  escreva("Numero Da CNH: ")
+                  leia(cadastroCliente[c].numCnh)
+                  escreva("Telefone: ")
+                  leia(cadastroCliente[c].tel)
+                  escreva("Esdereço (Nº da casa, bairro e rua): ")
+                  leia(cadastroCliente[c]. endereco)
+                  limpatela
+
+
+                  escreval("# O cliente foi cadastrado! #")
+                  escreval("Continuar cadastrando clientes?")
+                  escreval("1 - sim")
+                  escreval("0 - não")
+                  escreva("Opção: ")
+                  leia(opsn)
+                  limpatela
+
+                  se (opsn = "1") entao
+                     interrompa
+                  fimse
+                  c <- c + 1
+               fimpara
+
+               // cadastro de clientes
+            caso 2
+
+               limpatela
+               para f de 0 ate 2 faca
+                  escreva("Nome: ")
+                  leia(cadastroFuncionario[f].nome)
+                  escreva("CPF: ")
+                  leia(cadastroFuncionario[f].cpf)
+                  escreva("Login: ")
+                  leia(cadastroFuncionario[f].login)
+                  escreva("Senha: ")
+                  leia(cadastroFuncionario[f].senha)
+                  limpatela
+
+                  escreval("# O funcionario foi cadastrado! #")
+                  escreval("Continuar cadastrando?")
+                  escreval("Opção: ")
+                  escreval("1 - sim")
+                  escreval("0 - não")
+                  leia(opsn)
+                  limpatela
+
+                  se (opsn = "0") entao
+                     interrompa
+                  fimse
+                  f <- f + 1
+               fimpara
+
+               // cadastro de carros
+            caso 3
+
+               limpatela
+               repita
+                  para car de 0 ate 2 faca
+
+                     escreva("Marca: ")
+                     leia(cadastroCarro[car].marca)
+                     escreva("Modelo: ")
+                     leia(cadastroCarro[car].modelo)
+                     escreva("Placa: ")
+                     leia(cadastroCarro[car].placa)
+                     escreva("Ano: ")
+                     leia(cadastroCarro[car].ano)
+                     escreva("Cor: ")
+                     leia(cadastroCarro[car].cor)
+                     escreva("Valor da Diária: ")
+                     leia(cadastroCarro[car].valordiaria)
+                     limpatela
+
+
+
+                  fimpara
+
+               ate (car = 2)
+
+            caso = 4
+
+               limpatela
+
+               acesso <- falso
+
+               escreva("Procurar por placa: ")
+               leia(placapesq)
+
+               //Carregamento
+               Pesquisando <- 0
+
+               enquanto (Pesquisando <= 100) faca
+                  limpatela
+                  escreva("Pesquisando")
+                  escreval(Pesquisando,"%")
+                  Pesquisando <- Pesquisando + 1
+
+               fimenquanto
+               limpatela
+               //----------------------------------------------
+
+
+               para car de 0 ate 2 faca
+                  se (placapesq = cadastroCarro[car].placa) entao
+
+                     escreval ("Carro: ", cadastroCarro[car].marca)
+                     escreval ("Modelo: ", cadastroCarro[car].modelo)
+                     escreval ("Placar: ", cadastroCarro[car].placa)
+                     escreval ("Ano: ", cadastroCarro[car].ano)
+                     escreval ("Cor: ", cadastroCarro[car].cor)
+                     escreval ("Valor: ", cadastroCarro[car].valordiaria)
+
+                     acesso <- verdadeiro
+
+                  fimse
+               fimpara
+
+               se (acesso = falso) entao
+                  escreval("")
+                  escreval("Placa não encontrada!")
+
+               fimse
+
+
+               escreval("")
+               escreval("##Enter para continuar!##")
+               leia(continuar)
+               limpatela
+
+            caso 5
+               se (menufunc = 5) entao
+
+                  interrompa
+
+               fimse
+
+            fimescolha
+
+         fimenquanto
+
+
+         //2º caso do menu principal
+
+      caso 2
+
+         limpatela
+         repita
+            escreval("     *Opção para Cliente*       ")
+            escreval("<><><><><><><><><><><><><><><><>")
+            escreval("[1]- Menu Principal             ")
+            escreval("[2]- Sair                       ")
+            escreval("[3]- Carros disponiveis p/ aluguel")
+            escreval("================================")
+            escreval("      Processo de aluguel       ")
+            escreval("================================")
+            escreval("[4]- CPF dos clientes cadastrados")
+            escreval("[5]- Realizar o aluguel          ")
+            
+            escreva("Opção: ")
+            leia(menuclien)
+
+            limpatela
+            escolha (menuclien)
+
+
+            caso 1
+
+               interrompa
+
+
+            caso 2
+
+
+            Fimalgoritmo
+
+
+            caso 3
+
+
+                 para car de 0 ate 2 faca
+                 
+                     se (car = cadastroCarro[car].placa) entao
+                      escreval("")
+                     escreval ("Carro: ", cadastroCarro[car].marca)
+                     escreval ("Modelo: ", cadastroCarro[car].modelo)
+                     escreval ("Placar: ", cadastroCarro[car].placa)
+                     escreval ("Ano: ", cadastroCarro[car].ano)
+                     escreval ("Cor: ", cadastroCarro[car].cor)
+                     escreval ("Valor: ", cadastroCarro[car].valordiaria)
+
+                   senao
+                   escreval("Nada cadastrado!")
+                   
+                   fimse
+                  fimpara
+
+                  escreval("")
+                  escreval("##Enter para continuar!##")
+                  leia(continuar)
+
+            caso 4
+
+
+                 limpatela
+                 acesso <- falso
+   
+                 repita
+                 escreva("Digite o CPF do cliente: ")
+                 leia (buscaclien)
+
+                 //Carregamento
+               Pesquisando <- 0
+
+               enquanto (Pesquisando <= 100) faca
+                  limpatela
+                  escreva("Pesquisando")
+                  escreval(Pesquisando, "%")
+                  Pesquisando <- Pesquisando + 1
+
+               fimenquanto
+               limpatela
+               //----------------------------------------------
+
+                 para c de 0 ate 2 faca
+                 se (buscaclien = cadastroCliente[c].cpf) entao
+                 
+                 escreval("O cliente foi encontrado!")
+                 escreval("")
+                 escreval("Nome: ",cadastroCliente[c].nome)
+                 escreval("CPF: ",cadastroCliente[c].cpf)
+                 escreval("Numero Da CNH: ",cadastroCliente[c].numCnh)
+                 escreval("Telefone: ",cadastroCliente[c].tel)
+                 escreval("Esdereço (Nº da casa, bairro e rua): ",cadastroCliente[c]. endereco)
+
+                 acesso <- verdadeiro
+
+                 fimse
+                 fimpara
+         
+                  se (acesso = falso) entao
+                  escreval("")
+                  escreval("Cliente não encontrado/cadastrado!")
+                  fimse
+
+                  escreval("")
+                  escreval("##Enter para continuar!##")
+                  leia(continuar)
+                  ate (continuar = 0)
+                  
+                  limpatela
+                  
+                  
+             caso 5
+
+
+              limpatela
+
+               acesso <- falso
+
+               escreva("Procurar por placa: ")
+               leia(placapesq)
+
+               //Carregamento
+               Pesquisando <- 0
+
+               enquanto (Pesquisando <= 100) faca
+                  limpatela
+                  escreva("Pesquisando")
+                  escreval(Pesquisando,"%")
+                  Pesquisando <- Pesquisando + 1
+
+               fimenquanto
+               limpatela
+               //----------------------------------------------
+
+
+               para car de 0 ate 2 faca
+                  se (placapesq = cadastroCarro[car].placa) entao
+
+                     escreval ("Carro: ", cadastroCarro[car].marca)
+                     escreval ("Modelo: ", cadastroCarro[car].modelo)
+                     escreval ("Placar: ", cadastroCarro[car].placa)
+                     escreval ("Ano: ", cadastroCarro[car].ano)
+                     escreval ("Cor: ", cadastroCarro[car].cor)
+                     escreval ("Valor: ", cadastroCarro[car].valordiaria)
+
+
+                      escreval("")
+               escreval("")
+
+               escreval("Em que dia e hora que deseja retirar o carro?:")
+               escreva("Data/Hora: ")
+               leia(diahora)
+               escreval("Em casos de preblema você pode devolver a qualquer memomento")
+               escreval("")
+               escreva("Informe a quantidades de dias: ")
+               leia(quantdias)
+
+               escreval("Você irá pagar",cadastroCarro[car].valordiaria * quantdias,"$")
+               escreval("")
+               escreval("Carro alugado, Obrigado!" )
+
+                     acesso <- verdadeiro
+
+                  fimse
+               fimpara
+
+               se (acesso = falso) entao
+                  escreval("")
+                  escreval("Placa não encontrada!")
+
+               fimse
+
+
+            escreval("##Enter para continuar!##")
+               leia(continuar)
+               limpatela
+
+
+   fimescolha
+
+
+fimescolha
+
+ate (menup = 0)
+
+
+Fimalgoritmo
