@@ -41,34 +41,68 @@ int main(void) {
         case 1:
             system("cls"); 
             
-            printf("Login: ");
-            fflush(stdin); //<--Limpar o buffer mas vc pode dar um espaco no %c pra funcionar
-            gets(login);
+            do {
+                printf("Login: ");
+                fflush(stdin); //<--Limpar o buffer mas vc pode dar um espaco no %c pra funcionar
+                gets(login);
 
-            printf("Senha: ");
-            fflush(stdin);
-            gets(senha);
+                printf("Senha: ");
+                fflush(stdin);
+                gets(senha);
 
-            system("cls");
+                system("cls");
 
-            do
-            {
-                //printf("Login: %s", login);
-                //printf("Senha: %s", senha);
                 //Voce pode alterar o login e senha a qualquer momento por aqui ;D
                 if (!strcmp(login, "admin")  && !strcmp(senha, "2023")) {
                     printf("    ** Bem-Vindo **     \n");
                 } else {
                     printf("Usuario nao encontrado tente novamente!\n");
-                    printf("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
+                    printf("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\n");
                 }
-            } while (!strcmp(login, "admin") && !strcmp(senha, "2023"));
+            } while ((!strcmp(login, "admin") && !strcmp(senha, "2023")) == false);
+
+
+            while (!strcmp(login, "admin") && !strcmp(senha, "2023")) {
+
+                int carga = 0; //Carragamento para efeitos visuais
+                while (carga <= 100) {
+                    system("cls");
+                    printf("Carregando!!\n %d %% \n", carga);
+                    carga++;
+                }
+                system("cls");// Fim do carragamento inutil
+
+                printf("|==============================|\n");
+                printf("|   ** Menu de Cadastro **     |\n");
+                printf("|==============================|\n");
+                printf("( 1 ) - Cadastrar Cliente       \n");
+                printf("( 2 ) - Cadastrar Funcionario   \n");
+                printf("( 3 ) - Cadastrar Carro         \n");
+                printf("( 4 ) - Exibir Relatorio        \n");
+                printf("( 5 ) - Opcao para Cliente      \n");
+                printf("|==============================|\n");
+                printf("Opcao: ");
+                scanf("%i", &menufunc);
+                fflush(stdin);
+                system("cls");
+
+                switch (menufunc) {
+                case 1:     //Cadastro de clientes
+                    /* code */
+                    break;
+                
+                default:
+
+                    break;
+                }
+            }
+            
             
 
             break;
         
         default:
-
+            printf("\nObrigado e volte sempre!!\n");
             break;
         }
 
