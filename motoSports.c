@@ -4,7 +4,7 @@
 #include <string.h>
 
 int main(void) {
-    system("cls");
+    system("clear");
     //Struct Arrays dos cadastros
    //... 
 
@@ -39,7 +39,7 @@ int main(void) {
 
         switch (menuop) {
         case 1:
-            system("cls"); 
+            system("clear"); 
             
             do {
                 printf("Login: ");
@@ -50,7 +50,7 @@ int main(void) {
                 fflush(stdin);
                 gets(senha);
 
-                system("cls");
+                system("clear");
 
                 //Voce pode alterar o login e senha a qualquer momento por aqui ;D
                 if (!strcmp(login, "admin")  && !strcmp(senha, "2023")) {
@@ -66,11 +66,11 @@ int main(void) {
 
                 int carga = 0; //Carragamento para efeitos visuais
                 while (carga <= 100) {
-                    system("cls");
+                    system("clear");
                     printf("Carregando!!\n %d %% \n", carga);
                     carga++;
                 }
-                system("cls");// Fim do carragamento inutil
+                system("clear");// Fim do carragamento inutil
 
                 printf("|==============================|\n");
                 printf("|   ** Menu de Cadastro **     |\n");
@@ -84,7 +84,7 @@ int main(void) {
                 printf("Opcao: ");
                 scanf("%i", &menufunc);
                 fflush(stdin);
-                system("cls");
+                system("clear");
 
                 switch (menufunc) {
                 case 1:     //Cadastro de clientes
