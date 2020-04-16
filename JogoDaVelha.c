@@ -60,6 +60,61 @@ char mainGame() {
     while(placeLeft) {
         indexChange = playerPick(board, playerChar);
         board[indexChange] = playerChar;
-    }
+		clrscr();
+		printBoard(board);
 
+		if(checkWinner(board, playerChar, indexChange)){
+			placeLeft = false;
+		} else if(placeLeft(board) == false) {
+			playerChar = 'D';
+			placeLeft = false;
+		} else {
+			playerChar = (playerChar == 'X') ? 'O' : 'X';
+		}
+	
+		return playerChar;
+    }
 }
+	// Verifica e escreve a escolha do jogador
+int playerPick(char arr[10], char letter) {
+	int player;
+	int choice;
+	bool validChoice = false;
+
+	if (letter = 'X' ) {
+		player = 1;
+	} else {
+		player = 2;
+	}
+
+	while (validChoice == false) {
+		printf("Jogador %d selecione um numero: ", player);
+		scanf("%d", choice);
+		if (checkEntry(choice) == false) {  
+			printf("Entrada invalida, tente novamente: ");
+		} else {
+			validChoice = checkMove(arr, choice); 
+			if (validChoice == false) {
+				printf("Entrada invalida, tente novamente: ");
+			}
+		}
+	}
+	return choice;
+}
+
+//Mostra a atualizacao da tabela no formato jogo da velha
+void printBoard(char arr[10]) {
+	
+	//Mostra o titulo e o cabecalho do jogador
+	printf("\n\t\t Jogo Da Velha \n \n");
+	printf("\t Player 1 (X) = Player 2 (O) \n\n\n");
+
+	int index = 1;
+
+	while (index < MAXIDEX) {
+		// Borda do numero do eixo y
+		printf("\t \t | \t \t | \n");
+		// Borda do numero do eixo y
+		printf("\t%c\t | \t%c\t | \t%c\n")
+	}
+}	
