@@ -48,4 +48,3 @@ void troca(int *num, int *num2) {
 	*num = *num2;
 	*num2 = temp;
 }
-

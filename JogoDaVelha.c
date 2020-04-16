@@ -51,11 +51,10 @@ int main(void) {
 	} else {
 		printf("Deu Velha!!!");
 	}
-
     return (0);
 }
 
-//D = desenha o X = player ganhador 1 O = player ganhador 2
+//D = empate o X = player ganhador 1 O = player ganhador 2
 char mainGame() {
     char board[10] = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
     bool placeLeft = true;
@@ -96,7 +95,7 @@ int playerPick(char arr[10], char letter) {
 
 	while (validChoice == false) {
 		printf("Jogador %d selecione um numero: ", player);
-		scanf("%d", choice);
+		scanf("%d", &choice);
 		if (checkEntry(choice) == false) {  
 			printf("Entrada invalida, tente novamente: ");
 		} else {
