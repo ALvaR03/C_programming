@@ -14,6 +14,7 @@ system("cls");
 
 	printf("A quantidade de letra do texto e: %d", strlen(texto));
 
+	system("exit");
 /*
 	do
 	{
