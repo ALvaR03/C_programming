@@ -1,44 +1,35 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stdbool.h>
+
+bool checkPalindromo(char *inputString);
 
 int main(void) {
 	system("@cls || clear");
 
-	FILE *fPointer;
-	fPointer = fopen("bacon.txt", "w");
-
-	fprintf(fPointer, "Eu gosto de bacon");
-
-	fclose(fPointer);
-
-	/*
-	FILE *fptr;
-	int c, stock;
-	char buffer[200], item[10];
-	float price;
-
-	fptr = fopen("meuArquivo.txt", "w");
-
-	fgets(buffer, 20, fptr);
-	printf("%s\n", buffer);
-
-	fscanf(fptr, "%d%s%f", &stock, item, &price);
-	printf("%d %s %4.2f\n", stock, item, price);
-
-	while ((c = getc(fptr)) != EOF) 
-		printf("%c", c);
-
-	fclose(fptr);
-
-	if (fptr == NULL) {
-		printf("Erro em abrir o arquivo");
-		return -1;
-	}
-
-	fclose(fptr);
-	*/
+	char palavra[80], palindromo[80], p;
+	
+	printf("Digite a palvra: ");
+	gets(palavra);
+	palindromo[p] = checkPalindromo(palavra);	
 	
 	return 0;
 }
+
+bool checkPalindromo(char *inputString) {
+	char *q = inputString + strlen(inputString) - 1;
+
+	printf("InputString: %s\n", inputString);
+	while (q > inputString) {
+		if(*q-- != *inputString++) {
+			printf("Nao e palindromo\n");
+			break;
+		} else {
+			printf("E palindromo!!!\n");
+			break;
+		}
+	}
+}
+
 //printf("Hello World!! \n %%"); ** Este aquirvo e para testar codigos em C
