@@ -3,7 +3,7 @@
 #include <locale.h>
 #define MaxTam 10 
 
-int main(void) {
+int main(void) { // Main 
     setlocale(LC_ALL, "");
     system("cls");
 
