@@ -3,33 +3,48 @@
 #include <string.h>
 #include <stdbool.h>
 
-bool checkPalindromo(char *inputString);
-
 int main(void) {
 	system("@cls || clear");
 
-	char palavra[80], palindromo[80], p;
-	
-	printf("Digite a palvra: ");
-	gets(palavra);
-	palindromo[p] = checkPalindromo(palavra);	
-	
-	return 0;
-}
+	int num1, num2, total;
+	char operador;
 
-bool checkPalindromo(char *inputString) {
-	char *q = inputString + strlen(inputString) - 1;
+	printf("Digite o Primeiro e Segundo Numero: \n");
+	scanf("%d", &num1);
+	scanf("%d", &num2);
 
-	printf("InputString: %s\n", inputString);
-	while (q > inputString) {
-		if(*q-- != *inputString++) {
-			printf("Nao e palindromo\n");
+	__fpurge(stdin);
+	printf("Qual Operador(+, -, *, /):\n");
+	scanf("%c", &operador);
+
+	switch(operador) {
+		case '+':
+			total = num1 + num2;
+			printf("\nResultado da soma e %d", total);
 			break;
-		} else {
-			printf("E palindromo!!!\n");
+
+		case '-': 
+			total = num1 + num2;
+			printf("\nResultado da subtracao e %d", total);
 			break;
-		}
+		case '*':
+			total = num1 * num2;
+			printf("\nResultado da multiplicacao e %d", total);
+			break;
+		case '/':
+			if (num2 == 0 ) {
+				printf("Erro na execucao!!\n");
+				break;
+			} else {
+				total = num1 / num2;
+				printf("\nResultado da multiplicacao e %d", total);
+				break;
+			}
+		default:
+			printf("Operador Invalido!!!");
+			break;
 	}
+	return 0;
 }
 
 //printf("Hello World!! \n %%"); ** Este aquirvo e para testar codigos em C
