@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <math.h>
 
+//somando primos
 int sum(int *arr, int n);
 
 int* getPrimes(int n);
