@@ -13,14 +13,15 @@ int main(int argc, char **argv) {
 	struct ficha_aluno aluno;
 
 	printf("\n----- Cadastro do aluno ------\n\n");
-	printf("Nome:  ");
-	fgets(aluno.nome, 40, stdin);
 
 	printf("Numero do aluno: ");
 	scanf("%d", &aluno.numero);
 
 	printf("Informe a nota do aluno: ");
 	scanf("%f", &aluno.nota);
+
+	printf("Nome:  ");
+	gets(aluno.nome);
 
 	printf("\n------ Exibindo os dados -------\n\n");
 	printf("Nome: %s", aluno.nome);
