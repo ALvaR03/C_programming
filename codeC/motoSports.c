@@ -3,32 +3,33 @@
 #include <stdbool.h>
 #include <string.h>
 
+struct Clientes {
+    char nome[20];
+    int cpf; 
+    float numCnh;
+    int telefone;
+    char endereco[20];
+};
+
+struct Funcionario {
+    char nome[20];
+    int cpf;
+    char login[15];
+    char senha[15];
+};
+
+struct Carro {
+    char marca[10];
+    char modelo[10];
+    char placa[8];
+    int ano;
+    char cor[10];
+    float valorDiaria;
+};
+
 int main(void) {
-    system("clear");
+    //system("@cls || clear");
     //Struct Arrays dos cadastros
-    struct Clientes {
-        char nome[20];
-        int cpf; 
-        float numCnh;
-        int telefone;
-        char endereco[20];
-    };
-
-    struct Funcionario {
-        char nome[20];
-        int cpf;
-        char login[15];
-        char senha[15];
-    };
-
-    struct Carro {
-        char marca[10];
-        char modelo[10];
-        char placa[8];
-        int ano;
-        char cor[10];
-        float valorDiaria;
-    };
 
     struct Clientes cadasClientes[2];
     int c;
@@ -70,16 +71,16 @@ int main(void) {
 
         switch (menuop) {
         case 1:
-            system("clear"); 
+            system("@cls || clear");
             
             do {
                 printf("Login: ");
                 fflush(stdin); //<--Limpar o buffer mas vc pode dar um espaco no %c pra funcionar
-                gets(login);
+                fgets(login, 50, stdin);
 
                 printf("Senha: ");
                 fflush(stdin);
-                gets(senha);
+                fgets(senha, 50, stdin);
 
                 system("clear");
 
