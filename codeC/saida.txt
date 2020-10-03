@@ -1,0 +1,72 @@
+Controle de um mercado. Sistema ira cadastrar produto: nome, quantidade, valor. 
+
+Sistema cadastra os funcionarios com: nome e matricula. 
+
+O dono do sistema cadastra funcionario e produto, o funcionario realiza venda balcao direto para cliente,
+o cliente escolhe o produto e quantidade que deseja comprando um item por vez, o sistema exibi o valor total
+para o clinte, o cliente paga com o valor, o sistema calcula o troco e exibi.
+
+O sistema tem a opcao tem a opcao de relatorio para ver quais produtos foram vendidos e quantidade, esse 
+relatorio so e para ser exibido como opcao para o dono.
+
+obs: trate os errso necessarios.
+
+ex: 
+    >> so podera realizar a venda caso produto exista e tenha quantidade depositada;
+    >> O valor de cadastro do produto nunca podera ser zero ou valor Menor;
+
+
+    Saida:
+
+    Cadastre um login e uma senha
+    Login:
+    Senha:
+
+
+    O administrador esta online!!
+
+    |--------------------------------|
+    |   1 - Cadastrar funcionario    |
+    |   2 - Cadastrar produto        |
+    |   3 - Gerar relatorio          |
+    |   0 - Sair do sistema          |
+    |--------------------------------|
+    Opcao: 
+
+    3 - Relatorio 
+        Os produtos vendidos foram:        
+        Produto: Tv
+        Quantidade: 21
+
+        Produto: Celular
+        Quntidade: 34
+
+
+    Bem-vindo Funcionario *nome* 
+    |--------------------------------|
+    |   1 -  Realizar venda          |
+    |   0 - Sair do sistema          |
+    |--------------------------------|
+    Opcao: 
+
+    Nome do produto para a pesquisa  
+    -->> 
+    -true
+        Nome: 
+        Quantidade:
+        Valor do produto:
+
+    Vender esta produto? [s/n]
+    -false
+        Produto fora de estoque!!
+
+    ===========
+    -true
+    Informe a quantidade: 30  
+    O valor final calculado e R$: 200,00 
+
+    Deseja realizar a compra? [s/n]:
+    -true 
+    Informe o valor a pagar R$: 
+    Troco do cliente R$: 100,00
+        --false:

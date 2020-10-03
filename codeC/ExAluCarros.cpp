@@ -123,7 +123,7 @@ int main() {
 		for(int i = 0; i < 3; i++){
 			if((strcmp(login.login, vetfunc[i].login.login) == 0) && (login.senha == vetfunc[i].login.senha)){
 			do {
-				printf("\t\tBem vindo Funcionario:%s \n", vetfunc[i].nome);
+				printf("\t\tBem vindo Funcionario: %s \n", vetfunc[i].nome);
 			  	printf("1-Cadastrar Carro\n");
 			  	printf("2-Cadastrar Cliente\n");
 			  	printf("3-Realizar aluguel Carro\n");
@@ -157,16 +157,16 @@ int main() {
                             setbuf(stdin, NULL);
                             fgets(vetcli[i].nome, sizeof(vetcli[i].nome), stdin);
 
-                            printf("\nCpf: ");
+                            printf("Cpf: ");
                             setbuf(stdin, NULL);
                             fgets(vetcli[i].cpf, sizeof(vetcli[i].cpf), stdin);
 
-                            printf("\nRg: ");
+                            printf("Rg: ");
                             setbuf(stdin, NULL);
                             fgets(vetcli[i].rg, sizeof(vetcli[i].rg), stdin);
 
-                            printf("\nCNH: ");
-                            scanf("%i",&vetcli[i].cnh);
+                            printf("CNH: ");
+                            scanf("%i", &vetcli[i].cnh);
 
                             //cadastrar contato e endereco	
 
@@ -176,11 +176,10 @@ int main() {
                     case 3 :
 
                         char cpfpesq[16];//variavel auxiliar para comparar cpf
-                        int achou,es,diaria;
+                        int es, diaria, achou;
                         float vt;
                         achou = 0;
 
-                        //achou=0;
                         printf("Digite Cpf para consulta: ");
                         setbuf(stdin, NULL);
                         fgets(cpfpesq, sizeof(cpfpesq), stdin);
